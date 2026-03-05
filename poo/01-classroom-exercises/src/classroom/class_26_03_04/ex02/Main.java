@@ -1,4 +1,4 @@
-package classroom.c260304.ex02;
+package classroom.class_26_03_04.ex02;
 
 public class Main {
     static void main(String[] args) {

@@ -1,4 +1,4 @@
-package classroom.c260226;
+package classroom.class_26_02_26;
 
 public class Account {
     int number;
