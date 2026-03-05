@@ -10,8 +10,11 @@ public class Main {
         String name = scanner.nextLine();
 
         System.out.println("How old are you?");
-        int age = scanner.nextInt();
+        int age = Integer.parseInt(scanner.nextLine());
 
-        System.out.printf("User: %s has %d years", name, age);
+        System.out.println("What's your salary?");
+        double salary = Double.parseDouble(scanner.nextLine());
+
+        System.out.printf("User: %s is %d years old and received %.2f", name, age, salary);
     }
 }
