@@ -38,6 +38,25 @@ public class Graph {
         }
     }
 
+    public void show(){
+        for (Vertex vertex : vertexList){
+            if (vertex != null){
+                System.out.print(vertex.getName() + " -> ");
+
+                List<Edge> adjacents = vertex.getAdjacents();
+                for (Edge edge : adjacents){
+                    if (edge != null){
+                        System.out.printf(
+                                edge.getDestiny().getName() +
+                                "[" + edge.getWeight() + "]");
+                    }
+                }
+
+                System.out.println();
+            }
+        }
+    }
+
     public List<Vertex> getVertexList(){
         return this.vertexList;
     }
