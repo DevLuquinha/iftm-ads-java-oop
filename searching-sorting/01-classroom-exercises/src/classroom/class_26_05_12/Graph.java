@@ -48,7 +48,7 @@ public class Graph {
                     if (edge != null){
                         System.out.printf(
                                 edge.getDestiny().getName() +
-                                "[" + edge.getWeight() + "]");
+                                "[" + edge.getWeight() + "], ");
                     }
                 }
 
