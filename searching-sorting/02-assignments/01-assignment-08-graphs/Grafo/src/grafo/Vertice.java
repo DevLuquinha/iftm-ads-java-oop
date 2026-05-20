@@ -10,7 +10,8 @@ import java.util.List;
 public class Vertice {
     private String nome;
     private List<Aresta> adjacencias;
-    
+    private boolean visitado;
+
     public Vertice(String nome){
         this.nome = nome;
         this.adjacencias = new ArrayList();
@@ -26,5 +27,13 @@ public class Vertice {
     
     public void adicionarAresta(Aresta a) {
         adjacencias.add(a);
+    }
+
+    public boolean isVisitado() {
+        return visitado;
+    }
+
+    public void setVisitado(boolean visitado) {
+        this.visitado = visitado;
     }
 }

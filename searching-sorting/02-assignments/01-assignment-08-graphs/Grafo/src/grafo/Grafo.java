@@ -1,7 +1,9 @@
 package grafo;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 /**
  *
@@ -59,6 +61,37 @@ public class Grafo {
                 );
             }
             System.out.println();
+        }
+    }
+
+    public void bsf(){
+        System.out.print("BUSCA EM PROFUNDIDADE: ");
+        for (Vertice vertice : vertices){
+            if (!vertice.isVisitado()){
+                System.out.printf("CHAMANDO BUSCA (" + vertice.getNome() + ") ");
+                buscaAmpl(vertice);
+            }
+        }
+    }
+
+    private void buscaAmpl(Vertice vertice){
+        vertice.setVisitado(true);
+        System.out.printf(vertice.getNome() + ", ");
+
+        Queue<Vertice> filaVertices = new LinkedList<Vertice>();
+        filaVertices.add(vertice);
+
+        while (!filaVertices.isEmpty()){
+            Vertice verticeRemovido = filaVertices.remove();
+            for (Aresta arestaAdjacente : verticeRemovido.getAdjacencias()){
+                Vertice verticeAtual = arestaAdjacente.getDestino();
+                if (!verticeAtual.isVisitado()){
+                    verticeAtual.setVisitado(true);
+                    System.out.printf(verticeAtual.getNome() + ", ");
+
+                    filaVertices.add(verticeAtual);
+                }
+            }
         }
     }
 }
