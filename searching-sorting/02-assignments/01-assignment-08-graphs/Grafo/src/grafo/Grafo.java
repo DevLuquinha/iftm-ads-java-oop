@@ -64,11 +64,10 @@ public class Grafo {
         }
     }
 
-    public void bsf(){
-        System.out.print("BUSCA EM PROFUNDIDADE: ");
+    public void bfs(){
+        System.out.print("BUSCA EM LARGURA: ");
         for (Vertice vertice : vertices){
             if (!vertice.isVisitado()){
-                System.out.printf("CHAMANDO BUSCA (" + vertice.getNome() + ") ");
                 buscaAmpl(vertice);
             }
         }

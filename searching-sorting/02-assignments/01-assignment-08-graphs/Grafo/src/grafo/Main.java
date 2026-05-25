@@ -50,6 +50,6 @@ public class Main {
         grafo.adicionarAresta("10","3",15);
      
 //        grafo.mostrar();
-        grafo.bsf();
+        grafo.bfs();
     }
 }
