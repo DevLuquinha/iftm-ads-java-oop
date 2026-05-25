@@ -93,4 +93,25 @@ public class Grafo {
             }
         }
     }
+
+    public void dfs(){
+        System.out.print("BUSCA EM PROFUNDIDADE: ");
+        for (Vertice vertice : vertices){
+            if (!vertice.isVisitado()){
+                prof(vertice);
+            }
+        }
+    }
+
+    private void prof(Vertice vertice){
+        System.out.printf(vertice.getNome() + ", ");
+        vertice.setVisitado(true);
+
+        for (Aresta arestaAdjacente : vertice.getAdjacencias()){
+            Vertice verticeAtual = arestaAdjacente.getDestino();
+            if (!verticeAtual.isVisitado()){
+                prof(verticeAtual);
+            }
+        }
+    }
 }

@@ -49,7 +49,8 @@ public class Main {
         grafo.adicionarAresta("10","2",5);
         grafo.adicionarAresta("10","3",15);
      
-//        grafo.mostrar();
-        grafo.bfs();
+        grafo.mostrar();
+//        grafo.bfs();
+//        grafo.dfs();
     }
 }
