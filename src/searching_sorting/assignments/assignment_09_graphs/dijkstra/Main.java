@@ -1,4 +1,4 @@
-package searching_sorting.assignments.assignment_08_graphs.grafo;
+package searching_sorting.assignments.assignment_09_graphs.dijkstra;
 
 /**
  *
@@ -50,7 +50,5 @@ public class Main {
         grafo.adicionarAresta("10","3",15);
      
         grafo.mostrar();
-//        grafo.bfs();
-//        grafo.dfs();
     }
 }

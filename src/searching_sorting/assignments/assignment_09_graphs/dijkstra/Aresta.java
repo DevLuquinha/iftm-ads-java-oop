@@ -1,4 +1,4 @@
-package searching_sorting.assignments.assignment_08_graphs.grafo;
+package searching_sorting.assignments.assignment_09_graphs.dijkstra;
 
 /**
  *
