@@ -18,9 +18,8 @@ public class Main {
         }
         
         criarArestasGrafoCidades(grafo);
-     
-        grafo.mostrar();
-        System.out.println(grafo.getDistanciaCidadeAteBucharestLinhaReta("Arad"));
+
+        grafo.buscaAEstrela(grafo.buscarVertice("Arad"), "Bucharest");
     }
     
     public static void criarArestasGrafoCidades(Grafo grafo) {

@@ -61,7 +61,47 @@ public class Grafo {
             System.out.println();
         }
     }
-    
+
+    public boolean buscaAEstrela(Vertice verticeAtual, String destino){
+        // Caso base: chegamos ao destino
+        if (verticeAtual.getNome().equals(destino)){
+            System.out.printf("Caminho traçado: " + verticeAtual.getNome() + ", ");
+            return true;
+        }
+
+        List<VerticeAEstrela> listaOrdenada = new ArrayList<>();
+
+        for (Aresta aresta : verticeAtual.getAdjacencias()){
+            String nomeDestino = aresta.getDestino().getNome();
+            int custo = aresta.getPeso() + getDistanciaCidadeAteBucharestLinhaReta(nomeDestino);
+            insereOrdenado(listaOrdenada, aresta.getDestino(), custo);
+        }
+
+        for (VerticeAEstrela v : listaOrdenada){
+            Vertice proximoVertice = v.getVertice();
+            if (buscaAEstrela(proximoVertice, destino)){
+                System.out.printf(verticeAtual.getNome() + ", ");
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private void insereOrdenado(List<VerticeAEstrela> lista, Vertice vertice, int custo){
+        VerticeAEstrela novoItem = new VerticeAEstrela(vertice, custo);
+
+        for (int i = 0; i < lista.size(); i++){
+            VerticeAEstrela v = lista.get(i);
+            if (custo < v.getCusto()){
+                lista.add(i, novoItem);
+                return;
+            }
+        }
+
+        lista.add(novoItem);
+    }
+
     int getDistanciaCidadeAteBucharestLinhaReta(String cidade) {
         int distancia = -1;  // valor padrão para "cidade não encontrada"
 
