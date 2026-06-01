@@ -19,7 +19,6 @@ public class Grafo {
         this.vertices.add(novoVertice);
     }
     
-    //Busca vértice pelo nome
     public Vertice buscarVertice(String nome) {
         for(int i=0; i < vertices.size(); i++) {
             Vertice v = vertices.get(i);
@@ -59,6 +58,61 @@ public class Grafo {
                 );
             }
             System.out.println();
+        }
+    }
+
+    public void dijkstra(String nomeOrigem){
+        // 1. Inicializar os nós
+        setDefaultValues(nomeOrigem);
+
+        // 2. Loop principal
+        Vertice menorVertice = buscarVertice(nomeOrigem);
+
+        while(menorVertice != null){
+            menorVertice.setVisitado(true);
+
+            // Relaxamento das arestas
+            for (Aresta aresta : menorVertice.getAdjacencias()){
+                Vertice destino = aresta.getDestino();
+                if (!destino.isVisitado()){
+                    int novoCusto = menorVertice.getCustoTotal() + aresta.getPeso();
+                    if (novoCusto < destino.getCustoTotal()){
+                        destino.setCustoTotal(novoCusto);
+                        destino.setPrecedente(menorVertice);
+                    }
+                }
+            }
+
+            menorVertice = obterMenorNaoVisitado();
+        }
+    }
+
+    private Vertice obterMenorNaoVisitado(){
+        Vertice menorVertice = null;
+        for(Vertice v : vertices){
+            if (!v.isVisitado()){
+                // Se for nulo OU se o custo do vértice atual for menor que o custo do menor salvo
+                if (menorVertice == null || v.getCustoTotal() < menorVertice.getCustoTotal()){
+                    menorVertice = v;
+                }
+            }
+        }
+
+        return menorVertice;
+    }
+
+    private void setDefaultValues(String nomeOrigem){
+        for (Vertice vertice : vertices){
+            // Just set 0 for root
+            if (vertice.getNome().equals(nomeOrigem)){
+                vertice.setCustoTotal(0);
+            } else {
+                // Set infinity for all nodes
+                vertice.setCustoTotal(Integer.MAX_VALUE);
+            }
+
+            // Set false for all nodes
+            vertice.setVisitado(false);
         }
     }
 }

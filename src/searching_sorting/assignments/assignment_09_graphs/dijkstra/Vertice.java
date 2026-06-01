@@ -54,5 +54,4 @@ public class Vertice {
     public void setVisitado(boolean visitado) {
         this.visitado = visitado;
     }
-    
 }

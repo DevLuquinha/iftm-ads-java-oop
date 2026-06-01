@@ -25,6 +25,4 @@ public class Aresta {
     public String toString() {
         return "Aresta{" + "destino=" + destino.getNome() + ", peso=" + peso + '}';
     }
-    
-    
 }
