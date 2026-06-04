@@ -1,15 +1,20 @@
 package oop.classroom_exercises.classroom.class_26_06_03;
 
-import oop.classroom_exercises.classroom.class_26_06_03.aconnectionfactory.ConnectionFactory;
+import oop.classroom_exercises.classroom.class_26_06_03.daos.ContactDao;
+import oop.classroom_exercises.classroom.class_26_06_03.models.Contact;
 
-import java.sql.Connection;
+import java.time.LocalDate;
 
 public class Main {
     public static void main(String[] args) {
-        ConnectionFactory connectionFactory = new ConnectionFactory();
-        Connection connection =  connectionFactory.getConnection();
+        Contact contact = new Contact();
+        contact.setId(1);
+        contact.setName("Lucas Emmanuel");
+        contact.setEmail("lucas.emmanuel@estudante.iftm.edu.br");
+        contact.setAddress("Av. Maranhão 936");
+        contact.setDateOfBirth(LocalDate.of(2006, 11, 19));
 
-        Connection conn = new ConnectionFactory().getConnection();
-        System.out.println("Connected :)");
+        ContactDao contactDao = new ContactDao();
+        contactDao.addContact(contact);
     }
 }
