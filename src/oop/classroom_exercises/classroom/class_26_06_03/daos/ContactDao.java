@@ -11,15 +11,15 @@ import java.sql.SQLException;
 public class ContactDao {
     public void addContact(Contact contact){
         Connection connection = new ConnectionFactory().getConnection();
+
         try {
-            String sql = "INSERT INTO contacts (id, name, email, address, dateOfBirth) VALUES (?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO contacts (name, email, address, dateOfBirth) VALUES (?, ?, ?, ?)";
             PreparedStatement statement = connection.prepareStatement(sql);
 
-            statement.setInt(1, contact.getId());
-            statement.setString(2, contact.getName());
-            statement.setString(3, contact.getEmail());
-            statement.setString(4, contact.getAddress());
-            statement.setDate(5, Date.valueOf(contact.getDateOfBirth()));
+            statement.setString(1, contact.getName());
+            statement.setString(2, contact.getEmail());
+            statement.setString(3, contact.getAddress());
+            statement.setDate(4, Date.valueOf(contact.getDateOfBirth()));
 
             statement.execute();
             statement.close();

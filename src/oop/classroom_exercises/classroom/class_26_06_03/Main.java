@@ -8,7 +8,6 @@ import java.time.LocalDate;
 public class Main {
     public static void main(String[] args) {
         Contact contact = new Contact();
-        contact.setId(1);
         contact.setName("Lucas Emmanuel");
         contact.setEmail("lucas.emmanuel@estudante.iftm.edu.br");
         contact.setAddress("Av. Maranhão 936");
