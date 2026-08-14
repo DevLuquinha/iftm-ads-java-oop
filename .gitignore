@@ -4,6 +4,12 @@ bin/
 target/
 *.class
 
+# Maven
+.mvn/wrapper/maven-wrapper.jar
+
+# Artefatos de execução dos jobs
+*.processed
+
 # IntelliJ IDEA
 .idea/
 *.iml
