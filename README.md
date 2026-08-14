@@ -5,6 +5,8 @@
 [![Database](https://img.shields.io/badge/Database-MySQL-blue.svg?style=flat-square&logo=mysql)](https://www.mysql.com/)
 [![Semester](https://img.shields.io/badge/Semester-3rd_Period-red.svg?style=flat-square)](#)
 
+> 📦 **Archived branch** — this is a snapshot of the 3rd semester. The current semester's work lives on [`main`](../../tree/main).
+
 This repository contains the source code, practical exercises, exam studies, and assignments developed during my **3rd Semester** of the **Systems Analysis and Development (ADS)** program at the **Federal Institute of Triângulo Mineiro (IFTM)**. 
 
 The academic semester focused on two key computer science disciplines using Java under different paradigms and applications:
@@ -128,6 +130,8 @@ The database persistence exercises expect a local MySQL instance with the follow
 <summary><b>Clique para expandir a documentação em Português (Click to expand)</b></summary>
 
 # ☕ Estudos em Java - 3º Período (ADS - IFTM)
+
+> 📦 **Branch arquivada** — este é um snapshot do 3º período. O trabalho do semestre atual está na branch [`main`](../../tree/main).
 
 Este repositório contém o código-fonte, exercícios práticos, estudos para provas e trabalhos desenvolvidos durante o meu **3º Período** no curso de **Análise e Desenvolvimento de Sistemas (ADS)** no **Instituto Federal do Triângulo Mineiro (IFTM)**.
 
