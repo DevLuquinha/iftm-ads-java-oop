@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-SpringwithoutwebApplication<springwithoutweb>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "web.springwithoutweb.SpringwithoutwebApplication",
+      "projectName": "springwithoutweb",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}
