@@ -30,7 +30,7 @@ public class Person implements Serializable {
 
     private Boolean hasAllergy;
 
-    private Boolean hasComorbidities;
+    private String comorbidities;
 
     private String bloodType;
 
@@ -82,12 +82,12 @@ public class Person implements Serializable {
         this.hasAllergy = hasAllergy;
     }
 
-    public Boolean getHasComorbidities() {
-        return hasComorbidities;
+    public String getComorbidities() {
+        return comorbidities;
     }
 
-    public void setHasComorbidities(Boolean hasComorbidities) {
-        this.hasComorbidities = hasComorbidities;
+    public void setComorbidities(String comorbidities) {
+        this.comorbidities = comorbidities;
     }
 
     public String getBloodType() {
@@ -101,7 +101,7 @@ public class Person implements Serializable {
     @Override
     public String toString() {
         return "Person [code=" + code + ", name=" + name + ", cpf=" + cpf + ", birthDate=" + birthDate
-                + ", priorityGroup=" + priorityGroup + ", hasAllergy=" + hasAllergy + ", hasComorbidities="
-                + hasComorbidities + ", bloodType=" + bloodType + "]";
+                + ", priorityGroup=" + priorityGroup + ", hasAllergy=" + hasAllergy + ", Comorbidities="
+                + comorbidities + ", bloodType=" + bloodType + "]";
     }
 }
